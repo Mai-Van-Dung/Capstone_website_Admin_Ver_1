@@ -106,10 +106,11 @@ export default function History() {
             <tr>
               <th className="p-3">Activity ID</th>
               <th className="p-3">User</th>
-              <th className="p-3">Device</th>
+              <th className="p-3">Camera Device</th>
+              <th className="p-3">Jewelry Device</th>
               <th className="p-3">Action</th>
               <th className="p-3">Status</th>
-              <th className="p-3">IP / MAC</th>
+           
               <th className="p-3">Timestamp</th>
               <th className="p-3 text-center">Detail</th>
             </tr>
@@ -119,6 +120,7 @@ export default function History() {
               <tr key={i} className="border-t hover:bg-gray-50">
                 <td className="p-3">{a.id}</td>
                 <td className="p-3">{a.user}</td>
+                <td className="p-3">{a.device}</td>
                 <td className="p-3">{a.device}</td>
                 <td className="p-3">{a.action}</td>
                 <td className="p-3">
@@ -138,11 +140,8 @@ export default function History() {
                     </span>
                   )}
                 </td>
-                <td className="p-3">
-                  {a.ip}
-                  <br />
-                  {a.mac}
-                </td>
+                
+
                 <td className="p-3">{a.time}</td>
                 <td
                   className="p-3 text-blue-500 cursor-pointer hover:underline text-center"
@@ -233,6 +232,7 @@ export default function History() {
                 className="w-full border px-3 py-2 rounded-lg bg-gray-50"
               />
             </div>
+            
             <div>
               <label className="block text-gray-600 text-sm mb-1">MAC Address</label>
               <input

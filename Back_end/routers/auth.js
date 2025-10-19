@@ -5,6 +5,9 @@ const {
   getAllUsers,
   getUserById,
   register,
+  createUser,
+  updateUser,
+  deleteUser,
 } = require("../controllers/authControllers");
 
 // Route đăng nhập
@@ -16,7 +19,12 @@ router.get("/users", getAllUsers);
 // Route lấy 1 user theo id
 router.get("/users/:id", getUserById);
 
-// Route đăng ký
+// Route đăng ký (public)
 router.post("/register", register);
+
+// New: admin/frontend CRUD
+router.post("/users", createUser);         // POST /api/auth/users
+router.put("/users/:id", updateUser);      // PUT /api/auth/users/:id
+router.delete("/users/:id", deleteUser);   // DELETE /api/auth/users/:id
 
 module.exports = router;
